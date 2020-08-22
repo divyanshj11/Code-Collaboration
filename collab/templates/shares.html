@@ -1,0 +1,8 @@
+<h1>Plese enter the Invitation code{{ num }}</h1>
+<center>
+<form action="http://127.0.0.1:8000/share" method="POST">
+    {% csrf_token %}
+    Email: <input type="text" name="email">
+    <button type="submit">Share Doc</button>
+</form>
+</center>

@@ -1,0 +1,23 @@
+<h1>Commit History{{ num }}</h1>
+<form action="http://127.0.0.1:8000/roll" method="post">
+    {% csrf_token %}
+    <label>Email Id: {{email}}</label></label><br>
+    <label>Workspace Id: {{code}}</label><br><br>
+    Rollback to: <input type="text" placeholder="commit number" name="head">
+    <button type="submit">Submit</button>
+</form>
+<center>Commit Details</center>
+<table border="1">
+<tr>
+    <td>Commit number</td>
+    <td>Commit email</td>
+    <td>Commit Text</td>
+</tr>
+{% for val in arr %}
+<tr>
+    <td>{{val.id}}</td>
+    <td>{{val.email}}</td>
+    <td><pre>{{val.text}}</pre></td>
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,13 @@
+<h1>Plese enter the Invitation code{{ num }}</h1>
+<center>
+<form action="http://127.0.0.1:8000/codes" method="POST">
+    {% csrf_token %}
+    Invite code: <input type="text" name="code">
+    <button type="submit">Use Code</button>
+</form>
+<form action="http://127.0.0.1:8000/createcode" method="POST">
+    {% csrf_token %}
+    Invite Code: <input type="text" name="code2">
+    <button type="submit">Create</button>
+</form>
+</center>

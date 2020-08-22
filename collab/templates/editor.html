@@ -1,0 +1,24 @@
+<form action="http://127.0.0.1:8000/edit" method="post">
+    {% csrf_token %}
+    <label style="margin-left: 1200px">Email Id:   {{email}} </label>
+    <br>
+    <label style="margin-left: 1200px">Workspace Id: {{code}}</label>
+    <br>
+    <a style="margin-left: 1200px" href="\clear" class="btn btn-default" onclick="myFunction2()">Delete file</a>
+    <a style="margin-left: 1200px" href="\roll" class="btn btn-default">Rollback</a><br>
+    <a style="margin-left: 1200px" href="\compare" class="btn btn-default">Compare</a><br>
+    <a style="margin-left: 1200px" href="\share" class="btn btn-default">Share</a><br>
+    <label>Workspace:</label>
+<div contenteditable="True">
+    <textarea name="text" rows="32" cols="190"placeholder="....">{{savedtext}}</textarea>
+    <button type="submit" onclick="myFunction()">Submit</button>
+</div>
+</form>
+<script>
+function myFunction() {
+  alert("Work saved Succesfully!");
+}
+function myFunction2() {
+    alert("Discarded all changes, Start Fresh!!");
+  }
+</script>

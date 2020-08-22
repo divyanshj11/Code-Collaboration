@@ -1,0 +1,47 @@
+<style>
+    span[type="changed"] {
+        background-color: #F7A28C;
+    }
+    span[type="same"] {
+        background-color: #B5F78C;
+    }
+    span[type="remove"] {
+        background-color: #55FF95;
+    }
+    span[type="add"] {
+        background-color: #55FF95;
+    }
+</style>
+<p>
+    Color codes:<br>
+    <span type="changed">This Line is Changed.</span><br>
+    <span type="add">This Line is Added/Removed.</span><br>
+    <span type="same">This Line is Same.</span><br>
+</p>
+<textarea id="i1" style="display:none;">{{m1}}</textarea>
+<textarea  id="i2" style="display:none;">{{m2}}</textarea>
+
+<table border=1 >
+    <tr>
+        <td>
+            commit number: {{c1}}
+        </td>
+        <td>
+            commit number: {{c2}}
+        </td>
+    </tr>
+    <tr>
+        <td width="680">    
+            <pre><p id='1' style="font-size:160%;">
+            </p></pre>
+        </td>
+        <td width="680">
+            <pre><p id='2' style="font-size:160%;">
+            </p></pre>            
+        </td>
+    </tr>
+</table>
+<script>
+document.getElementById('1').innerHTML=document.getElementById('i1').value;
+document.getElementById('2').innerHTML=document.getElementById('i2').value;
+</script>
